@@ -16,6 +16,7 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    
+    echo This was a POC execution by Prem on Azure Devops
+
   displayName: 'Run a multi-line script'
-  echo This was a POC execution by Prem on Azure Devops
+  

@@ -10,12 +10,7 @@ pool:
   name: default
 
 steps:
-
-- script: |
-     
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
+    
 - task: WorksoftExecutionManager@0
   inputs:
     executiontype: 'bookmark'
@@ -26,6 +21,3 @@ steps:
     resultattributeparameters: '1.2.3'
     resultfolder: '//DevOps//'
   
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'

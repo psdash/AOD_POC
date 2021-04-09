@@ -17,7 +17,7 @@ steps:
     bookmarkname: 'AzureE2E_1.0'
     email: 'wsadmin@brighthousefinancial.com'
     password: $(ws_password)
-    executionmanagerhostname: '10.224.11.230'
+    executionmanagerhostname: 'http://10.224.11.230'
     resultattributeparameters: '1.2.3'
     resultfolder: '//DevOps//'
   

@@ -1,0 +1,19 @@
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  loadRunnerController: 'Controller.exe'
+  loadRunnerScenario: 'Scenario.lrs'
+
+steps:
+- task: VSTest@2
+  inputs:
+    platform: 'x64'
+    configuration: 'Release'
+    testAssemblyVer2: '$(solution)'
+    codeCoverageEnabled: false
+
+- task: LoadRunnerTest@1
+  inputs:
+    controllerPath: '$(loadRunnerController)'
+    scenarioPath: '$(loadRunnerScenario)'

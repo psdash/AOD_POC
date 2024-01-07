@@ -1,0 +1,16 @@
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  worksoftProject: 'Project.zip'
+  worksoftTestResultFile: 'TestResult.xml'
+
+steps:
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: '$(worksoftProject)'
+
+- task: WorksoftTest@1
+  inputs:
+    projectPath: '$(worksoftProject)'
+    testResultFile: '$(worksoftTestResultFile)'

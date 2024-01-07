@@ -1,0 +1,20 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  seleniumWebDriver: 'ChromeDriver'
+
+steps:
+- task: NuGetToolInstaller@1
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: SeleniumWebDriverInstaller@1
+  inputs:
+    webdriverVersion: 'latest'
+
+- task: SeleniumTest@1
+  inputs:
+    testAssemblyVer2: '$(solution)'
+    runSettingsFile: '$(runSettingsFile)'
